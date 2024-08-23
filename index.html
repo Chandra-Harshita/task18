@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Question1
+
+    let arr1 = [3, 6, 9, 16, 25, 39, 100]
+    let result = arr1.map((num) => num ** 2)
+    console.log(result)
+
+    // Question2
+
+    const grades = (marks) => {
+      let grade =
+        marks > 90
+          ? 'A'
+          : marks > 80
+          ? 'B'
+          : marks > 70
+          ? 'C'
+          : marks > 60
+          ? 'D'
+          : marks > 50
+          ? 'E'
+          : 'F'
+      return grade
+    }
+    let grade = grades(78)
+    console.log(grade)
+
+    //Question3
+
+    let car = {
+      companyName: 'Lamborgini',
+      model: 'HUJ78',
+      year: '2011',
+    }
+    const changeYear = (car, newyear) => {
+      car.year = newyear
+    }
+    changeYear(car, '2022')
+    let { companyName, model, year } = car
+    console.log(companyName, model, year)
+
+    //Question4
+
+    let arr = [2, 5, 4, 8, 17, 88, 456, 137, 89]
+    const isPrime = (num) => {
+      for (let i = 2; i < num; i++) {
+        if (num % i == 0) return false
+      }
+      return true
+    }
+    let res = arr.filter(isPrime)
+    console.log(res)
+
+    //Question5
+
+    // map():
+    // Extract a list of names from an array of objects representing people.
+    //Modifying elements
+    //filter():
+    //Filtering data: Get all even numbers from an array.
+    //Removing unwanted elements: Filter out falsy values from an array.
+    //reduce():
+    // Calculate the sum of all numbers in an array.
+    //Multiply all numbers in an array together.
+
+    //Question6
+
+    const Posts = async () => {
+      let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+      let user = await response.json()
+      user.forEach((num) => {
+        console.log(num.title)
+      })
+    }
+    Posts()
+
+    //Question7
+
+    const person = {
+      name: 'Harshu',
+      address: {
+        street: 'FCI 04',
+        city: 'TPG',
+        zip: '12345',
+      },
+      contact: {
+        email: 'harshu@example.com',
+      },
+    }
+
+    let phno = person.contact?.phone
+    console.log(phno)
+  </script>
+</html>
